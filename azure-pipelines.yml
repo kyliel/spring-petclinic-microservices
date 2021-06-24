@@ -28,4 +28,4 @@ steps:
     AppName: customer-service
     DeploymentName: green
     UseStagingDeployment: true
-    Package: /home/vsts/work/1/s/spring-petclinic-api-gateway/target/spring-petclinic-customer-service-2.3.6.jar
+    Package: /home/vsts/work/1/s/spring-petclinic-customer-service/target/spring-petclinic-customer-service-2.3.6.jar
