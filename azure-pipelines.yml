@@ -28,7 +28,7 @@ steps:
     AppName: customers-service
     DeploymentName: green
     UseStagingDeployment: true
-    Package: /home/vsts/work/1/s/spring-petclinic-customer-service/target/spring-petclinic-customers-service-2.3.6.jar
+    Package: /home/vsts/work/1/s/spring-petclinic-customers-service/target/spring-petclinic-customers-service-2.3.6.jar
 - task: AzureSpringCloud@0
   inputs:
     azureSubscription: 'springdemoconnection'
