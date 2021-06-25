@@ -72,7 +72,7 @@ public class Owner {
 
     @Column(name = "telephone")
     @NotEmpty
-    @Digits(fraction = 0, integer = 10)
+    @Digits(fraction = 0, integer = 20)
     private String telephone;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "owner")
