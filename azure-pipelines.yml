@@ -35,3 +35,18 @@ steps:
     AzureSpringCloud: kyliespringdemo
     AppName: customers-service
     UseStagingDeployment: true
+- task: AzureSpringCloud@0
+  inputs:
+    azureSubscription: 'springdemoconnection'
+    Action: 'Deploy'
+    AzureSpringCloud: kyliespringdemo
+    AppName: api-gateway
+    UseStagingDeployment: true
+    Package: /home/vsts/work/1/s/spring-petclinic-api-gateway/target/spring-petclinic-api-gateway-2.3.6.jar
+- task: AzureSpringCloud@0
+  inputs:
+    azureSubscription: 'springdemoconnection'
+    Action: 'Set Production'
+    AzureSpringCloud: kyliespringdemo
+    AppName: api-gateway
+    UseStagingDeployment: true
