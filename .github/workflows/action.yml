@@ -2,8 +2,8 @@ name: Deploy to Azure Spring Cloud with Key Vault
 on: [push]
 
 env:
-  RESOURCE_GROUP: petclinic-demo # customize this
-  SPRING_CLOUD_SERVICE: petclinic-demo # customize this
+  RESOURCE_GROUP: kyliespringdemo
+  SPRING_CLOUD_SERVICE: spring-ksqsrnzbrbtqw
   # ==== APPS ====:  
   API_GATEWAY: api-gateway
   ADMIN_SERVER: admin-server
@@ -29,7 +29,7 @@ jobs:
     - name: Get service SP from Key Vault
       uses: Azure/get-keyvault-secrets@v1.0
       with:
-        keyvault: "petclinicdemokv"
+        keyvault: "kyliekeyvault"
         secrets: "AZURE-CREDENTIALS-FOR-SPRING"
       id: keyvaultaction
     
