@@ -50,7 +50,7 @@ jobs:
     - name: Get MySQL Secrets from Key Vault
       uses: Azure/get-keyvault-secrets@v1.0
       with:
-        keyvault: "petclinicdemokv"
+        keyvault: "kyliekeyvault"
         secrets: "MYSQL-SERVER-FULL-NAME,MYSQL-DATABASE-NAME,MYSQL-SERVER-ADMIN-LOGIN-NAME,MYSQL-SERVER-ADMIN-PASSWORD"
       id: mysqlsecrets
       
