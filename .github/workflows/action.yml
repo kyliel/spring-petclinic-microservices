@@ -17,10 +17,24 @@ env:
   VETS_SERVICE_JAR: spring-petclinic-vets-service/target/spring-petclinic-vets-service-2.2.1.jar
   VISITS_SERVICE_JAR: spring-petclinic-visits-service/target/spring-petclinic-visits-service-2.2.1.jar
 
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: TRUE
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: log untrusted output
+      run: |
+
+        # disable command workflow processing
+        echo "::stop-commands::`echo -n ${{ github.token }} | sha256sum | head -c 64`"
+
+        # log untrusted output
+        echo "untrusted output"
+
+        # enable workflow command processing
+        echo "::`echo -n ${{ github.token }} | sha256sum | head -c 64`::"
+        
     - name: Login with Key Vault SP
       uses: azure/login@v1
       with:
